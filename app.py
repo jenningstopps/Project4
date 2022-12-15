@@ -10,15 +10,17 @@ app = Flask(__name__)
 @app.route('/')
 
 def hello():
-    print("Hello World")
+
     env_var = os.environ['PATH']
     print("PATH: ", env_var)
 
-    return "<h1>Hello World!</h1>" \
-          "\nThis is my introduction to Flask!" \
-         "\nI can write a lot of things on this page.\nLet's get started!"
+    #print("Hello World", file=sys.stderr)
 
-    #return render_template('app.html')
+    #return "<h1>Hello World!</h1>" \
+    #      "\nThis is my introduction to Flask!" \
+    #     "\nI can write a lot of things on this page.\nLet's get started!"
+
+    return render_template('app.html')
 
 # The above function returns the HTML code to be displayed on the page
 
