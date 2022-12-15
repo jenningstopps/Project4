@@ -11,8 +11,9 @@ app = Flask(__name__)
 
 def hello():
 
-    env_var = os.environ['PATH']
-    print("PATH: ", env_var)
+    env_var = os.environ['PORT']
+    os.environ['PORT'] = '5000'
+    #print("PATH: ", env_var)
 
     #print("Hello World", file=sys.stderr)
 
@@ -28,4 +29,4 @@ def hello():
 
 if __name__ == '__main__':
 
-   app.run()
+   app.run(port=5000)
